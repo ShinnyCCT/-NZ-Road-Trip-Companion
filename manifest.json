@@ -1,0 +1,12 @@
+{
+  "short_name": "NZTrip",
+  "name": "NZ Road Trip Companion",
+  "icons": [
+    { "src": "/kiwi_192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/kiwi_512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#e4edfe",
+  "theme_color": "#bcd2f9"
+}
