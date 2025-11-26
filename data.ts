@@ -93,6 +93,8 @@ export interface Activity {
   links?: ActionLink[]; 
   subActivities?: SubActivity[];
   navLink?: string; // Custom direct link for navigation
+  showNav?: boolean; // Control whether to show the navigation button
+  hideNav?: boolean; // Explicitly hide navigation button (legacy support)
 }
 
 export interface SunInfo {
@@ -189,7 +191,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
           location: "EZI Car Rental Christchurch Airport",
           lat: -43.4894,
           lng: 172.5344,
-          showNav: false,
+          hideNav: true,
           notes: "前往 EZI 櫃台取車，預約號碼：R1LKGS" 
       }, 
       { 
