@@ -243,6 +243,10 @@ const App = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const listContainerRef = useRef<HTMLDivElement>(null);
 
+  // Touch handling state
+  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
+  const [touchEnd, setTouchEnd] = useState<{x: number, y: number} | null>(null);
+
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
     const tripStartDate = itineraryData[0].date;
@@ -291,6 +295,49 @@ const App = () => {
         window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank');
     }
   };
+
+  // Touch Handlers for Swipe Gestures
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null); // Reset touch end
+    setTouchStart({
+        x: e.targetTouches[0].clientX,
+        y: e.targetTouches[0].clientY
+    });
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd({
+        x: e.targetTouches[0].clientX,
+        y: e.targetTouches[0].clientY
+    });
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distanceX = touchStart.x - touchEnd.x;
+    const distanceY = touchStart.y - touchEnd.y;
+    
+    // Vertical Lockout: If vertical movement is greater than horizontal, ignore as scroll
+    const isHorizontalSwipe = Math.abs(distanceX) > Math.abs(distanceY);
+    // Threshold Check: Must be > 75px
+    const isSignificantDistance = Math.abs(distanceX) > 75;
+
+    if (isHorizontalSwipe && isSignificantDistance) {
+        if (distanceX > 0) {
+            // Swiped Left (finger moved right to left) -> Next Day
+            if (currentDayIndex < itineraryData.length - 1) {
+                setCurrentDayIndex(prev => prev + 1);
+            }
+        } else {
+            // Swiped Right (finger moved left to right) -> Prev Day
+            if (currentDayIndex > 0) {
+                setCurrentDayIndex(prev => prev - 1);
+            }
+        }
+    }
+  };
+
 
   return (
     <div className="h-screen flex flex-col text-slate-800 overflow-hidden font-sans selection:bg-[#d993b3]/30">
@@ -371,7 +418,13 @@ const App = () => {
         </div>
 
         {/* Content - Itinerary - Bottom on Mobile (DOM order after Map), Left on Desktop via order-1 */}
-        <div ref={listContainerRef} className="flex-1 md:w-[35%] md:order-1 overflow-y-auto p-3 md:p-0 bg-transparent z-10 no-scrollbar md:rounded-3xl md:overflow-hidden md:flex md:flex-col">
+        <div 
+            ref={listContainerRef} 
+            className="flex-1 md:w-[35%] md:order-1 overflow-y-auto p-3 md:p-0 bg-transparent z-10 no-scrollbar md:rounded-3xl md:overflow-hidden md:flex md:flex-col"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+        >
             
             {/* Day Info Header - Fixed Height (Mobile 140px, Desktop Adaptive with 1:2 ratio constraint) */}
             <div 
