@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # 1. 設定網頁標題
-st.title("🤖 我的 AI 助手")
+st.title("NZ Journey 測試")
 st.write("這是由 Google Gemini 驅動的 AI 網站")
 
 # 2. 接收使用者的輸入
