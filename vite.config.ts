@@ -4,8 +4,11 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '.', '');
-  
+  // Use process.cwd() and prefer VITE_ prefix in .env files
+  const env = loadEnv(mode, process.cwd(), '');
+
+  const apiKey = env.VITE_GEMINI_API_KEY || env.GEMINI_API_KEY || '';
+
   return {
     server: {
       port: 3000,
@@ -25,13 +28,15 @@ export default defineConfig(({ mode }) => {
           start_url: ".",
           display: "standalone",
           background_color: "#e4edfe",
-          theme_color: "#bcd2f9"  // ✅ 修正：添加開頭引號
+          theme_color: "#bcd2f9"
         }
       })
     ],
+    // If you need process.env.* usage in client code, set these, else prefer import.meta.env
     define: {
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      'process.env.GEMINI_API_KEY': JSON.stringify(apiKey),
+      'process.env.API_KEY': JSON.stringify(apiKey),
+      // Optionally: 'import.meta.env': JSON.stringify(env) // not recommended
     },
     resolve: {
       alias: {
