@@ -396,7 +396,7 @@ const App = () => {
                   : 'bg-white/40 text-slate-600 border-white/30 hover:bg-white/60'
               }`}
             >
-              <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider opacity-90">{day.dayLabel}</span>
+              <span className="text-[10px] md:text-xs font-bold font-sans uppercase tracking-wider opacity-90">{day.dayLabel}</span>
               <span className="text-xs font-mono font-bold">{day.date.slice(5).replace('-', '/')}</span>
             </button>
           ))}
@@ -547,7 +547,7 @@ const App = () => {
                         )}
 
                         <div className="flex gap-2 mt-1 flex-wrap">
-                           {!currentDay.isFlightDay && item.type !== 'admin' && !item.subActivities && item.location && item.lat && (
+                           {!currentDay.isFlightDay && item.type !== 'admin' && !item.subActivities && item.location && item.lat && (item.showNav !== false) && (
                                 <button 
                                     onClick={(e) => {
                                     e.stopPropagation();
@@ -635,7 +635,7 @@ const App = () => {
                                  <div className="flex items-center gap-3 mb-3">
                                      <div className="text-xl font-black text-slate-800">{flight.route.split('->')[0].trim().split(' ')[0]}</div>
                                      <div className="flex-1 h-px bg-slate-200 relative">
-                                        <Plane className={`w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 ${secIdx === 0 ? 'text-[#8cd9ff]' : 'text-[#f0d2af]'}`} />
+                                        <Plane className={`w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 ${secIdx === 0 ? 'text-[#8cd9ff]' : 'text-[#f0d2af]'}`} />
                                      </div>
                                      <div className="text-xl font-black text-slate-800">{flight.route.split('->')[1].trim().split(' ')[0]}</div>
                                  </div>
