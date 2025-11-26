@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>紐西蘭家庭旅遊 App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+      body {
+        font-family: 'Noto Sans TC', sans-serif;
+        background-color: #e3f4fa; /* Base color */
+        /* Custom Palette Aurora Gradient */
+        background-image: 
+            radial-gradient(at 10% 10%, #f0d2af 0px, transparent 50%), 
+            radial-gradient(at 90% 0%, #d993b3 0px, transparent 50%), 
+            radial-gradient(at 90% 90%, #8cd9ff 0px, transparent 50%), 
+            radial-gradient(at 10% 90%, #e3f4fa 0px, transparent 50%);
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-tap-highlight-color: transparent;
+        min-height: 100vh;
+      }
+      /* Hide scrollbar */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      /* Ensure map controls are visible and interactive */
+      .leaflet-control-container .leaflet-top,
+      .leaflet-control-container .leaflet-bottom {
+        z-index: 1000 !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
