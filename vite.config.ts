@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
-
+  
   return {
     server: {
       port: 3000,
@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
           start_url: ".",
           display: "standalone",
           background_color: "#e4edfe",
-          theme_color: #bcd2f9"
+          theme_color: "#bcd2f9"  // ✅ 修正：添加開頭引號
         }
       })
     ],
