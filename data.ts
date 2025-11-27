@@ -207,7 +207,9 @@ export const ITINERARY_DATA: DayItinerary[] = [
           { title: "基督城植物園", location: "Christchurch Botanic Gardens", lat: -43.5305, lng: 172.6169, notes: "占地大，有綠意植物&漂亮花朵" },
           { title: "河岸市場 Riverside Market", location: "Riverside Market", lat: -43.5337, lng: 172.6335, notes: "多國美食市集，蜂蜜MGO濃度高且便宜" },
           { title: "基督城大教堂 & 紙教堂", location: "Christchurch Transitional Cathedral", lat: -43.5309, lng: 172.6370, notes: "附近可看到可愛電車，適合拍照" },
-          { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "郵局改建的特色建築，漢堡從天花板管線投遞" }
+          { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) \n 郵局改建的特色建築，漢堡從天花板管線投遞" }
+          { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" }
+          { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" }
         ]
       },
       { 
@@ -220,8 +222,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
         lng: 172.6330, 
         notes: "",
         subActivities: [
-           { title: "Athens Yacht Club (希臘菜)", location: "Athens Yacht Club", lat: -43.5341, lng: 172.6330, notes: "份量多但貴，最推Flamed Cheese & Giannis Pita Bread & Hot greek doughnt" },
-           { title: "Afghan Restaurant (阿富汗菜)", location: "Afghan Restaurant", lat: -43.5285, lng: 172.6390, notes: "份量大又好吃，廚師依人頭出菜 NZD23/人，現金付款", navLink: "https://maps.app.goo.gl/PX4pWZNTfiLEUmWM9" }
+           { title: "Athens Yacht Club (希臘菜)", location: "Athens Yacht Club", lat: -43.5341, lng: 172.6330, notes: "4.9⭐(748則) \n 份量多但貴，最推Flamed Cheese & Giannis Pita Bread & Hot greek doughnt" },
+           { title: "Afghan Restaurant (阿富汗菜)", location: "Afghan Restaurant", lat: -43.5285, lng: 172.6390, notes: "4.7⭐(1231則) \n 份量大又好吃，廚師依人頭出菜 NZD23/人，現金付款", navLink: "https://maps.app.goo.gl/PX4pWZNTfiLEUmWM9" }
         ]
       }
     ] 
@@ -251,7 +253,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
       }, 
       { time: "14:00", title: "牧羊人教堂 & 湖畔", type: "visit", duration: "1 hr", location: "Church of the Good Shepherd", lat: -44.0035, lng: 170.4815, notes: "內部不開放，湖畔步道散步，觀賞魯冰花海", navLink: "https://maps.app.goo.gl/vnUh9NSfbi46Xsks9" }, 
       { time: "15:30", title: "Mt. John 天文台 & Astro Cafe", type: "visit", duration: "1.5 hr", location: "Mount John Observatory", lat: -43.9859, lng: 170.4644, notes: "喝咖啡眺望蒂卡波湖全景 (需付8紐過路費)" }, 
-      { time: "18:00", title: "Kohan Restaurant (日式)", type: "food", duration: "1.5 hr", location: "Kohan Restaurant", lat: -44.0049, lng: 170.4778, notes: "生鮭魚飯/壽司超級好吃，建議提前預約" }, 
+      { time: "18:00", title: "Kohan Restaurant (日式)", type: "food", duration: "1.5 hr", location: "Kohan Restaurant", lat: -44.0049, lng: 170.4778, notes: "4.3⭐(1781則) \n 生鮭魚飯/壽司超級好吃，建議提前預約" }, 
       { time: "00:45", title: "觀星 (@Mt. John 天文台)", type: "visit", duration: "1.5 hr", location: "Dark Sky Project", lat: -44.0040, lng: 170.4760, notes: "國際暗空保護區的觀星體驗" } 
     ] 
   },
@@ -264,6 +266,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:45", set: "21:10" }, 
     weather: { temp: "12°C", condition: "Rain", desc: "山區多變" }, 
     activities: [ 
+      { time: "8:00", title: "The Greedy Cow Cafe", type: "food", duration: "1 hr", location: "The Greedy Cow Cafe", lat: -44.0041099, lng: 170.4768473, notes: "4.5⭐(2000則) \n 紐西蘭最好吃鹹派Sanga’s pi", navLink: "https://maps.app.goo.gl/K2aGwjgmvQSSiSpW9" }, 
       { 
           time: "09:00", 
           title: "移動：前往庫克山", 
@@ -307,8 +310,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
           type: "transport", 
           duration: "2.5 hr", 
           location: "Wanaka", 
-          lat: -44.7000, 
-          lng: 169.1167, 
+          lat: -44.2887568, 
+          lng: 170.0837274, 
           notes: "",
           subActivities: [
               { title: "High Country Salmon", location: "High Country Salmon", lat: -44.3506, lng: 170.0688, notes: "生鮭魚片或烤鮭魚都好吃", navLink: "https://maps.app.goo.gl/N6GPBjYYuh6ib5du9" }
@@ -330,13 +333,14 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:45", set: "21:13" }, 
     weather: { temp: "20°C", condition: "Sunny", desc: "適合跳傘" }, 
     activities: [ 
-      { time: "09:45", title: "Skydive 跳傘", type: "activity", duration: "3 hr", location: "Skydive Wanaka", lat: -44.7228, lng: 169.2432, notes: "已預約10:15場次，-帶著一顆冒險的心，挑戰人生新高度！" }, 
+      { time: "09:45", title: "Skydive 跳傘", type: "activity", duration: "3 hr", location: "Skydive Wanaka", lat: -44.7228, lng: 169.2432, notes: "• 已預約10:15場次，-帶著一顆冒險的心，挑戰人生新高度！\n• 需準備護照、穿保暖、學Banana Position" }, 
       { time: "13:30", title: "Scroggin Coffee (早午餐)", type: "food", duration: "1 hr", location: "Scroggin Coffee and Eatery", lat: -44.6942373, lng: 169.1373822, notes: "推薦酸種麵包配炒菇菇" }, 
       { time: "15:00", title: "Wanaka Lakefront 孤獨樹", type: "visit", duration: "1.5 hr", location: "#ThatWanakaTree", lat: -44.6983546, lng: 169.1175644, notes: "湖邊散步，與孤獨樹合影" }, 
       { time: "16:30", title: "Patagonia (冰淇淋)", type: "food", duration: "30 min", location: "Patagonia Chocolates Wanaka", lat: -44.6960527, lng: 169.1335297, notes: "紐西蘭特有口味 Hokey Pokey" },
        { time: "18:00", title: "晚餐", type: "food", duration: "1.5 hr", location: "Wanaka", lat: -44.6964353, lng: 169.1354572, notes: "", subActivities: [
-          { title: "Kai Kikokiko(烤肉)", location: "Kai Whakapai", lat: -44.6963330, lng: 169.1367828, notes: "外帶店，烤肉名店，有牛羊豬", navLink: "https://maps.app.goo.gl/a59RXhPbxFC73vx67" },
-          { title: "Firebird (炸雞)", location: "Firebird Wanaka", lat: -44.6962811, lng: 169.1378297, notes: "外帶店，炸雞跟薯條都很好吃" }
+          { title: "Kai Kikokiko(烤肉)", location: "Kai Whakapai", lat: -44.6963330, lng: 169.1367828, notes: "外帶店，推! 個人排名: 牛肉>豬肉>羊肉 ，每份肉都會附上薯條", navLink: "https://maps.app.goo.gl/a59RXhPbxFC73vx67" },
+          { title: "Firebird (炸雞)", location: "Firebird Wanaka", lat: -44.6962811, lng: 169.1378297, notes: "外帶店，炸雞跟薯條都很好吃", navLink: "https://maps.app.goo.gl/yAa4X8kW2cJ13zmM7" }
+          { title: "Noods ( Noodles & Bowls ) Asian food", location: "Noods ( Noodles & Bowls ) Asian food", lat: -44.6962001, lng: 169.1371218, notes: "外帶店，點泰式炒飯跟河粉，都不錯，可以滿足亞洲人的亞洲胃" , navLink: "https://maps.app.goo.gl/xUV9SwJneJFpRXNr9"}
       ] } 
     ] 
   },
@@ -420,6 +424,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:48", set: "21:20" }, 
     weather: { temp: "14°C", condition: "Rain", desc: "峽灣常雨" }, 
     activities: [ 
+      { time: "8:00", title: "Miles Better Pies", type: "food", duration: "1 hr", location: "Miles Better Pies", lat:-45.4166980, lng: 167.7124499, notes: "當地人氣鹹派店 \n 推薦口味:咖喱雞肉、薄荷羊肉、牛肉起司 \n 可以試試看鹿肉口味 ", navLink: "https://maps.app.goo.gl/XW8cqN43xumuaBSt8" } 
       { 
           time: "09:00", 
           title: "移動：前往米佛峽灣", 
@@ -431,7 +436,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
           notes: "停車場距離乘船碼頭要 30 分鐘步行距離",
           navLink: "https://maps.app.goo.gl/sNMzypt1uUvduDT16",
       }, 
-      { time: "12:30", title: "米佛峽灣遊船", type: "activity", duration: "2 hr", location: "Milford Sound Cruise Terminal", lat: -44.6700, lng: 167.9261, notes: "已預約13:00 場次，需攜帶保暖衣物" }, 
+      { time: "12:30", title: "米佛峽灣遊船", type: "activity", duration: "2 hr", location: "Milford Sound Cruise Terminal", lat: -44.6700, lng: 167.9261, notes: "已預約13:00 場次 \n 需攜帶防風、保暖衣物" }, 
       { 
         time: "16:00", 
         title: "移動：返回蒂阿瑙", 
@@ -446,8 +451,22 @@ export const ITINERARY_DATA: DayItinerary[] = [
           { title: "Mirror Lakes", location: "Mirror Lakes Walk", lat: -44.9833, lng: 168.0167, notes: "鏡湖，天氣好時倒影極美" },
           { title: "Eglinton Valley", location: "Eglinton Valley", lat: -45.1000, lng: 167.9500, notes: "壯闊的冰川谷草原，魔戒拍攝景點" }
        ]
-      }, 
-      { time: "19:40", title: "Te Anau Glowworm Caves", type: "activity", duration: "2.5 hr", location: "RealNZ Te Anau", lat: -45.4182, lng: 167.7111, notes: "已預約20:15 場次，搭船欣賞藍色螢火蟲洞" } 
+      },
+      { 
+        time: "18:00", 
+        title: "晚餐", 
+        type: "food", 
+        duration: "1.5 hr", 
+        location: "Te Anau", 
+        lat: -45.4146687, 
+        lng: 167.7150685, 
+        notes: "都沒吃過，可以一起討論",
+        subActivities: [
+          { title: "La Toscana Pizzeria", location: "La Toscana Pizzeria", lat: -45.4149613, lng: 167.7167907 , notes: "評價4.3⭐的義大利餐廳"},
+          { title: "Radha's Indian Restaurant", location: "Radha's Indian Restaurant", lat: -45.4147673, lng: 167.7171833, notes: "看起來好ㄘ的印度餐廳", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" }
+        ]
+      }  
+      { time: "19:40", title: "Te Anau Glowworm Caves", type: "activity", duration: "2.5 hr", location: "RealNZ Te Anau", lat: -45.4182, lng: 167.7111, notes: "已預約20:15 場次，搭船欣賞藍色螢火蟲洞", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" } 
     ] 
   },
   { 
@@ -459,6 +478,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:45", set: "21:15" }, 
     weather: { temp: "17°C", condition: "Sunny", desc: "晴朗" }, 
     activities: [ 
+      { time: "8:00", title: "Sandfly Cafe Te Anau", type: "food", duration: "", location: "Sandfly Cafe Te Anau", lat:  -45.4144401, lng: 167.7156299, notes: "4.6⭐(2104則) \n 當地早午餐經典，從早上 07:00 開始營業，很適合一早醒來想吃飯、喝杯咖啡的人 \n Eggs Benedict（尤其是搭配熱熏鮭魚的版本）非常受歡迎，搭配麵包與半熟蛋" , navLink: "https://maps.app.goo.gl/ycfaWuGMDNuwabXG8"},
       { 
           time: "09:00", 
           title: "移動：前往但尼丁", 
@@ -473,6 +493,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
               { title: "Tunnel Beach 隧道海灘", location: "Tunnel Beach Track", lat: -45.9169, lng: 170.4542, notes: "海蝕洞與人工隧道。" }
           ]
       }, 
+      { time: "12:00", title: "Gore", type: "food", duration: "", location: "Gore", lat: -46.0994404, lng: 168.9460087, notes: "中午在這城市休息吃午餐，定位點附近餐廳可以點cheese rolls \n 可以試試看的餐廳:Cafe Ambience、Table Talk Cafe" , navLink: "https://maps.app.goo.gl/tWHrff81E5W1zwqV8"}, 
       { 
         time: "17:00", 
         title: "但尼丁市區觀光", 
@@ -505,15 +526,15 @@ export const ITINERARY_DATA: DayItinerary[] = [
           type: "transport", 
           duration: "4.5 hr", 
           location: "Christchurch", 
-          lat: -43.5318, // Slightly offset to prevent overlap with Dinner
-          lng: 172.6362, 
+          lat: -45.3574381, // Slightly offset to prevent overlap with Dinner
+          lng: 170.8328421, 
           notes: "沿東海岸北上。",
           subActivities: [
               { title: "Moeraki Boulders 圓石", location: "Moeraki Boulders Beach", lat: -45.3462, lng: 170.8263, notes: "海灘上的巨大圓石" }
           ]
       }, 
       { time: "12:00", title: "Oamaru奧馬魯市區", type: "visit", duration: "1 hr", location: "Oamaru Victorian Precinct", lat: -45.1031, lng: 170.9708, notes: "奧瑪魯維多利亞特區，白色石灰岩建築群" }, 
-      { time: "13:30", title: "Riverstone Kitchen 午餐", type: "food", duration: "1 hr", location: "Riverstone Kitchen", lat: -44.9649, lng: 170.9658, notes: "網路推薦，奧瑪魯北邊，使用在地食材" }, 
+      { time: "13:30", title: "Riverstone Kitchen 午餐", type: "food", duration: "1 hr", location: "Riverstone Kitchen", lat: -44.9541941, lng: 171.0846819, notes: "網路推薦，奧瑪魯北邊，使用在地食材" }, 
       { 
         time: "18:00", 
         title: "晚餐", 
@@ -539,7 +560,15 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:55", set: "20:30" }, 
     weather: { temp: "22°C", condition: "Sunny", desc: "市區漫遊" }, 
     activities: [ 
-      { time: "09:00", title: "基督城市區自由活動", type: "visit", duration: "3 hr", location: "Christchurch Central City", lat: -43.5321, lng: 172.6362, notes: "享受假期尾聲，最後採買" }, 
+      { time: "09:00", title: "基督城市區自由活動", type: "visit", duration: "3 hr", location: "Christchurch Central City", lat: -43.5321, lng: 172.6362, notes: "享受假期尾聲，最後採買" 
+      subActivities: [
+          { title: "基督城植物園", location: "Christchurch Botanic Gardens", lat: -43.5305, lng: 172.6169, notes: "占地大，有綠意植物&漂亮花朵" },
+          { title: "河岸市場 Riverside Market", location: "Riverside Market", lat: -43.5337, lng: 172.6335, notes: "多國美食市集，蜂蜜MGO濃度高且便宜" },
+          { title: "基督城大教堂 & 紙教堂", location: "Christchurch Transitional Cathedral", lat: -43.5309, lng: 172.6370, notes: "附近可看到可愛電車，適合拍照" },
+           { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) \n 郵局改建的特色建築，漢堡從天花板管線投遞" }
+          { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" }
+          { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" }
+        ]}, 
       { time: "14:00", title: "前往機場 & 還車", type: "transport", duration: "1 hr", location: "Apex Car Rentals Christchurch Airport", lat: -43.4875, lng: 172.5373, notes: "搭乘 16:20 / 17:00 班機前往奧克蘭" }, 
       { time: "16:25", title: "前往奧克蘭", type: "flight", duration: "1.5 hr", location: "Auckland Airport", lat: -37.0082, lng: 174.7850, notes: "需備留時間還車" }, 
       { time: "19:00", title: "入住 Pullman Auckland Airport", type: "rest", duration: "", location: "Teewa Drive, Auckland Airport", lat: -37.0082, lng: 174.7850, notes: "機場旁，步行5分鐘即可抵達" } 
