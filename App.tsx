@@ -673,7 +673,7 @@ const App = () => {
               </button>
             </div>
             <div className="p-5 space-y-8">
-               <section>
+              <section>
                 <div className="grid gap-3">
                     {IMPORTANT_INFO.emergency.map((contact, idx) => (
                          <div key={idx} className="flex items-center justify-between bg-[#f0d2af]/20 p-4 rounded-2xl border border-[#f0d2af]/40">
@@ -685,29 +685,6 @@ const App = () => {
                     ))}
                 </div>
               </section>
-
-              {/* Traffic Rules Section */}
-              <section>
-                  <div className="bg-[#8cd9ff]/10 p-4 rounded-2xl border border-[#8cd9ff]/30 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#8cd9ff]/20 flex items-center justify-center text-[#006bb5]">
-                        <Car className="w-4 h-4" />
-                      </div>
-                      <span className="font-bold text-slate-700 text-sm">紐西蘭交通規則複習</span>
-                    </div>
-                    <a 
-                      href="https://timtingtravel.com/nz-driving-tips/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-white text-[#006bb5] text-xs font-bold rounded-full border border-[#8cd9ff]/40 shadow-sm hover:bg-[#8cd9ff]/10 transition-colors flex items-center gap-1"
-                    >
-                      <BookOpen className="w-3 h-3" />
-                      查看
-                    </a>
-                  </div>
-              </section>
-
-             
 
               <section>
                 <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 pl-1">每日住宿</h4>

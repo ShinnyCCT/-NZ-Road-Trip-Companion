@@ -207,9 +207,9 @@ export const ITINERARY_DATA: DayItinerary[] = [
           { title: "基督城植物園", location: "Christchurch Botanic Gardens", lat: -43.5305, lng: 172.6169, notes: "占地大，有綠意植物&漂亮花朵" },
           { title: "河岸市場 Riverside Market", location: "Riverside Market", lat: -43.5337, lng: 172.6335, notes: "多國美食市集，蜂蜜MGO濃度高且便宜" },
           { title: "基督城大教堂 & 紙教堂", location: "Christchurch Transitional Cathedral", lat: -43.5309, lng: 172.6370, notes: "附近可看到可愛電車，適合拍照" },
-          { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) \n 郵局改建的特色建築，漢堡從天花板管線投遞" }
-          { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" }
-          { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" }
+          { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) 郵局改建的特色建築，漢堡從天花板管線投遞" },
+          { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" },
+          { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則)義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" },
         ]
       },
       { 
@@ -222,8 +222,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
         lng: 172.6330, 
         notes: "",
         subActivities: [
-           { title: "Athens Yacht Club (希臘菜)", location: "Athens Yacht Club", lat: -43.5341, lng: 172.6330, notes: "4.9⭐(748則) \n 份量多但貴，最推Flamed Cheese & Giannis Pita Bread & Hot greek doughnt" },
-           { title: "Afghan Restaurant (阿富汗菜)", location: "Afghan Restaurant", lat: -43.5285, lng: 172.6390, notes: "4.7⭐(1231則) \n 份量大又好吃，廚師依人頭出菜 NZD23/人，現金付款", navLink: "https://maps.app.goo.gl/PX4pWZNTfiLEUmWM9" }
+           { title: "Athens Yacht Club (希臘菜)", location: "Athens Yacht Club", lat: -43.5341, lng: 172.6330, notes: "4.9⭐(748則) 份量多但貴，最推Flamed Cheese & Giannis Pita Bread & Hot greek doughnt" },
+           { title: "Afghan Restaurant (阿富汗菜)", location: "Afghan Restaurant", lat: -43.5285, lng: 172.6390, notes: "4.7⭐(1231則) 份量大又好吃，廚師依人頭出菜 NZD23/人，現金付款", navLink: "https://maps.app.goo.gl/PX4pWZNTfiLEUmWM9" }
         ]
       }
     ] 
@@ -248,13 +248,13 @@ export const ITINERARY_DATA: DayItinerary[] = [
         notes: "長途駕駛，路途景點：",
         subActivities: [
              { title: "Barkers 果醬店", location: "Barkers of Geraldine", lat: -44.0880, lng: 171.2436, notes: "紐西蘭知名果醬，全口味可試吃" },
-             { title: "Fairlie Bakehouse 鹹派", location: "Fairlie Bakehouse", lat: -44.1019, lng: 170.8295, notes: "推薦鮭魚口味鹹派" }
+             { title: "Fairlie Bakehouse 鹹派", location: "Fairlie Bakehouse", lat: -44.1019, lng: 170.8295, notes: "推薦鮭魚口味鹹派" },
         ]
       }, 
       { time: "14:00", title: "牧羊人教堂 & 湖畔", type: "visit", duration: "1 hr", location: "Church of the Good Shepherd", lat: -44.0035, lng: 170.4815, notes: "內部不開放，湖畔步道散步，觀賞魯冰花海", navLink: "https://maps.app.goo.gl/vnUh9NSfbi46Xsks9" }, 
       { time: "15:30", title: "Mt. John 天文台 & Astro Cafe", type: "visit", duration: "1.5 hr", location: "Mount John Observatory", lat: -43.9859, lng: 170.4644, notes: "喝咖啡眺望蒂卡波湖全景 (需付8紐過路費)" }, 
-      { time: "18:00", title: "Kohan Restaurant (日式)", type: "food", duration: "1.5 hr", location: "Kohan Restaurant", lat: -44.0049, lng: 170.4778, notes: "4.3⭐(1781則) \n 生鮭魚飯/壽司超級好吃，建議提前預約" }, 
-      { time: "00:45", title: "觀星 (@Mt. John 天文台)", type: "visit", duration: "1.5 hr", location: "Dark Sky Project", lat: -44.0040, lng: 170.4760, notes: "國際暗空保護區的觀星體驗" } 
+      { time: "18:00", title: "Kohan Restaurant (日式)", type: "food", duration: "1.5 hr", location: "Kohan Restaurant", lat: -44.0049, lng: 170.4778, notes: "4.3⭐(1781則) 生鮭魚飯/壽司超級好吃，建議提前預約" }, 
+      { time: "00:45", title: "觀星 (@Mt. John 天文台)", type: "visit", duration: "1.5 hr", location: "Dark Sky Project", lat: -44.0040, lng: 170.4760, notes: "國際暗空保護區的觀星體驗" }
     ] 
   },
   { 
@@ -277,7 +277,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
           lng: 170.0962, 
           notes: "沿普卡基湖 (Lake Pukaki) 行駛，風景美可停留拍照",
           subActivities: [
-              { title: "Mt Cook Alpine Salmon Shop", location: "Mount Cook Alpine Salmon", lat: -44.1442, lng: 170.1168, notes: "推薦購買鮭魚生魚片", navLink: "https://maps.app.goo.gl/5qL3ajXroGtbZtxq7" }
+              { title: "Mt Cook Alpine Salmon Shop", location: "Mount Cook Alpine Salmon", lat: -44.1442, lng: 170.1168, notes: "推薦購買鮭魚生魚片", navLink: "https://maps.app.goo.gl/5qL3ajXroGtbZtxq7" },
           ]
       }, 
       { time: "10:45", title: "庫克山冰川健行", type: "activity", duration: "3 hr", location: "Mount Cook Glacier Guiding", lat: -43.7333, lng: 170.0962, notes: "預約11:15場次，輕裝即可，帶水、能量棒、快樂的心", navLink: "https://maps.app.goo.gl/BmmDL3huPmZaXtL7A" }, 
@@ -291,7 +291,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
           lng: 170.1000, 
           notes: "• 庫克山步道：第一段來回約兩小時，可看到冰川湖 \n• 塔斯曼湖步道：推！來回僅需約 40 分鐘，眺望冰川末端" 
       }, 
-      { time: "17:30", title: "Alpine Dinner (隱士飯店)", type: "food", duration: "1.5 hr", location: "The Hermitage Hotel", lat: -43.7353, lng: 170.0962, notes: "晚餐時間 17:00-20:30" } 
+      { time: "17:30", title: "Alpine Dinner (隱士飯店)", type: "food", duration: "1.5 hr", location: "The Hermitage Hotel", lat: -43.7353, lng: 170.0962, notes: "晚餐時間 17:00-20:30" }
     ] 
   },
   { 
@@ -314,7 +314,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
           lng: 170.0837274, 
           notes: "",
           subActivities: [
-              { title: "High Country Salmon", location: "High Country Salmon", lat: -44.3506, lng: 170.0688, notes: "生鮭魚片或烤鮭魚都好吃", navLink: "https://maps.app.goo.gl/N6GPBjYYuh6ib5du9" }
+              { title: "High Country Salmon", location: "High Country Salmon", lat: -44.3506, lng: 170.0688, notes: "生鮭魚片或烤鮭魚都好吃", navLink: "https://maps.app.goo.gl/N6GPBjYYuh6ib5du9" },
           ]
       }, 
       { time: "15:30", title: "Wanaka Lavender Farm (薰衣草)", type: "visit", duration: "1.5 hr", location: "Wanaka Lavender Farm", lat: -44.6862, lng: 169.1756, notes: "12月是薰衣草季，也可以餵草泥馬" }, 
@@ -339,7 +339,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
       { time: "16:30", title: "Patagonia (冰淇淋)", type: "food", duration: "30 min", location: "Patagonia Chocolates Wanaka", lat: -44.6960527, lng: 169.1335297, notes: "紐西蘭特有口味 Hokey Pokey" },
        { time: "18:00", title: "晚餐", type: "food", duration: "1.5 hr", location: "Wanaka", lat: -44.6964353, lng: 169.1354572, notes: "", subActivities: [
           { title: "Kai Kikokiko(烤肉)", location: "Kai Whakapai", lat: -44.6963330, lng: 169.1367828, notes: "外帶店，推! 個人排名: 牛肉>豬肉>羊肉 ，每份肉都會附上薯條", navLink: "https://maps.app.goo.gl/a59RXhPbxFC73vx67" },
-          { title: "Firebird (炸雞)", location: "Firebird Wanaka", lat: -44.6962811, lng: 169.1378297, notes: "外帶店，炸雞跟薯條都很好吃", navLink: "https://maps.app.goo.gl/yAa4X8kW2cJ13zmM7" }
+          { title: "Firebird (炸雞)", location: "Firebird Wanaka", lat: -44.6962811, lng: 169.1378297, notes: "外帶店，炸雞跟薯條都很好吃", navLink: "https://maps.app.goo.gl/yAa4X8kW2cJ13zmM7" },
           { title: "Noods ( Noodles & Bowls ) Asian food", location: "Noods ( Noodles & Bowls ) Asian food", lat: -44.6962001, lng: 169.1371218, notes: "外帶店，點泰式炒飯跟河粉，都不錯，可以滿足亞洲人的亞洲胃" , navLink: "https://maps.app.goo.gl/xUV9SwJneJFpRXNr9"}
       ] } 
     ] 
@@ -385,7 +385,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
       { time: "9:00", title: "Skyline Luge 溜溜車", type: "activity", duration: "2.5 hr", location: "Skyline Queenstown", lat: -45.0274, lng: 168.6526, notes: "纜車上山看風景，必玩溜溜車" }, 
       { time: "13:00", title: "Bespoke Kitchen (早午餐)", type: "food", duration: "1 hr", location: "Bespoke Kitchen", lat: -45.0300, lng: 168.6645, notes: "推薦司康，每日有特殊口味" }, 
       { time: "14:30", title: "皇后鎮市區 & ANITA GELATO (冰淇淋)", type: "visit", duration: "1.5 hr", location: "Anita Gelato", lat: -45.0317, lng: 168.6595, notes: "紐西蘭最好吃的義式冰淇淋", navLink: "https://maps.app.goo.gl/yK4BdVLtEHMmofdR6" }, 
-      { time: "16:40", title: "TSS Earnslaw 蒸汽船 & BBQ", type: "activity", duration: "3.5 hr", location: "RealNZ", lat: -45.0332, lng: 168.6603, notes: "已預約17:00 場次，遊湖 + 農場 BBQ 晚餐", navLink: "https://maps.app.goo.gl/DuNGmjVe7LNwN3Ei8" } 
+      { time: "16:40", title: "TSS Earnslaw 蒸汽船 & BBQ", type: "activity", duration: "3.5 hr", location: "RealNZ", lat: -45.0332, lng: 168.6603, notes: "已預約17:00 場次，遊湖 + 農場 BBQ 晚餐", navLink: "https://maps.app.goo.gl/DuNGmjVe7LNwN3Ei8" }
     ] 
   },
   { 
@@ -449,7 +449,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
         subActivities: [
           { title: "Homer Tunnel", location: "Homer Tunnel", lat: -44.7633, lng: 167.9800, notes: "荷馬隧道，運氣好可見啄羊鸚鵡" },
           { title: "Mirror Lakes", location: "Mirror Lakes Walk", lat: -44.9833, lng: 168.0167, notes: "鏡湖，天氣好時倒影極美" },
-          { title: "Eglinton Valley", location: "Eglinton Valley", lat: -45.1000, lng: 167.9500, notes: "壯闊的冰川谷草原，魔戒拍攝景點" }
+          { title: "Eglinton Valley", location: "Eglinton Valley", lat: -45.1000, lng: 167.9500, notes: "壯闊的冰川谷草原，魔戒拍攝景點" },
        ]
       },
       { 
@@ -463,7 +463,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
         notes: "都沒吃過，可以一起討論",
         subActivities: [
           { title: "La Toscana Pizzeria", location: "La Toscana Pizzeria", lat: -45.4149613, lng: 167.7167907 , notes: "評價4.3⭐的義大利餐廳"},
-          { title: "Radha's Indian Restaurant", location: "Radha's Indian Restaurant", lat: -45.4147673, lng: 167.7171833, notes: "看起來好ㄘ的印度餐廳", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" }
+          { title: "Radha's Indian Restaurant", location: "Radha's Indian Restaurant", lat: -45.4147673, lng: 167.7171833, notes: "看起來好ㄘ的印度餐廳", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" },
         ]
       }  
       { time: "19:40", title: "Te Anau Glowworm Caves", type: "activity", duration: "2.5 hr", location: "RealNZ Te Anau", lat: -45.4182, lng: 167.7111, notes: "已預約20:15 場次，搭船欣賞藍色螢火蟲洞", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" } 
@@ -565,8 +565,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
           { title: "基督城植物園", location: "Christchurch Botanic Gardens", lat: -43.5305, lng: 172.6169, notes: "占地大，有綠意植物&漂亮花朵" },
           { title: "河岸市場 Riverside Market", location: "Riverside Market", lat: -43.5337, lng: 172.6335, notes: "多國美食市集，蜂蜜MGO濃度高且便宜" },
           { title: "基督城大教堂 & 紙教堂", location: "Christchurch Transitional Cathedral", lat: -43.5309, lng: 172.6370, notes: "附近可看到可愛電車，適合拍照" },
-           { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) \n 郵局改建的特色建築，漢堡從天花板管線投遞" }
-          { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" }
+           { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) \n 郵局改建的特色建築，漢堡從天花板管線投遞" },
+          { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" },
           { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" }
         ]}, 
       { time: "14:00", title: "前往機場 & 還車", type: "transport", duration: "1 hr", location: "Apex Car Rentals Christchurch Airport", lat: -43.4875, lng: 172.5373, notes: "搭乘 16:20 / 17:00 班機前往奧克蘭" }, 
