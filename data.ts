@@ -253,7 +253,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
       }, 
       { time: "14:00", title: "牧羊人教堂 & 湖畔", type: "visit", duration: "1 hr", location: "Church of the Good Shepherd", lat: -44.0035, lng: 170.4815, notes: "內部不開放，湖畔步道散步，觀賞魯冰花海", navLink: "https://maps.app.goo.gl/vnUh9NSfbi46Xsks9" }, 
       { time: "15:30", title: "Mt. John 天文台 & Astro Cafe", type: "visit", duration: "1.5 hr", location: "Mount John Observatory", lat: -43.9859, lng: 170.4644, notes: "喝咖啡眺望蒂卡波湖全景 (需付8紐過路費)" }, 
-      { time: "18:00", title: "Kohan Restaurant (日式)", type: "food", duration: "1.5 hr", location: "Kohan Restaurant", lat: -44.0049, lng: 170.4778, notes: "4.3⭐(1781則) 生鮭魚飯/壽司超級好吃，建議提前預約" }, 
+      { time: "18:00", title: "Kohan Restaurant (日式)", type: "food", duration: "1.5 hr", location: "Kohan Restaurant", lat: -44.0049, lng: 170.4778, notes: "4.3⭐(1781則) \n 生鮭魚飯/壽司超級好吃，建議提前預約" }, 
       { time: "00:45", title: "觀星 (@Mt. John 天文台)", type: "visit", duration: "1.5 hr", location: "Dark Sky Project", lat: -44.0040, lng: 170.4760, notes: "國際暗空保護區的觀星體驗" }
     ] 
   },
@@ -383,7 +383,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     weather: { temp: "19°C", condition: "Sunny", desc: "舒適" }, 
     activities: [ 
       { time: "9:00", title: "Skyline Luge 溜溜車", type: "activity", duration: "2.5 hr", location: "Skyline Queenstown", lat: -45.0274, lng: 168.6526, notes: "纜車上山看風景，必玩溜溜車" }, 
-      { time: "13:00", title: "Bespoke Kitchen (早午餐)", type: "food", duration: "1 hr", location: "Bespoke Kitchen", lat: -45.0300, lng: 168.6645, notes: "推薦司康，每日有特殊口味" }, 
+      { time: "13:00", title: "Bespoke Kitchen (早午餐)", type: "food", duration: "1 hr", location: "Bespoke Kitchen", lat: -45.0300, lng: 168.6645, notes: "4.6⭐(1617則) \n 推薦司康，每日有特殊口味" }, 
       { time: "14:30", title: "皇后鎮市區 & ANITA GELATO (冰淇淋)", type: "visit", duration: "1.5 hr", location: "Anita Gelato", lat: -45.0317, lng: 168.6595, notes: "紐西蘭最好吃的義式冰淇淋", navLink: "https://maps.app.goo.gl/yK4BdVLtEHMmofdR6" }, 
       { time: "16:40", title: "TSS Earnslaw 蒸汽船 & BBQ", type: "activity", duration: "3.5 hr", location: "RealNZ", lat: -45.0332, lng: 168.6603, notes: "已預約17:00 場次，遊湖 + 農場 BBQ 晚餐", navLink: "https://maps.app.goo.gl/DuNGmjVe7LNwN3Ei8" }
     ] 
@@ -545,8 +545,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
         lng: 172.6362,
         notes: "",
         subActivities: [
-           { title: "Athens Yacht Club (希臘菜)", location: "Athens Yacht Club", lat: -43.5341, lng: 172.6330, notes: "份量多但貴，最推Flamed Cheese & Giannis Pita Bread & Hot greek doughnt" },
-           { title: "Afghan Restaurant (阿富汗菜)", location: "Afghan Restaurant", lat: -43.5285, lng: 172.6390, notes: "份量大又好吃，廚師依人頭出菜 NZD23/人，現金付款", navLink: "https://maps.app.goo.gl/PX4pWZNTfiLEUmWM9" }
+           { title: "Athens Yacht Club (希臘菜)", location: "Athens Yacht Club", lat: -43.5341, lng: 172.6330, notes: "4.9⭐(748則) 份量多但貴，最推Flamed Cheese & Giannis Pita Bread & Hot greek doughnt" },
+           { title: "Afghan Restaurant (阿富汗菜)", location: "Afghan Restaurant", lat: -43.5285, lng: 172.6390, notes: "4.7⭐(1231則) 份量大又好吃，廚師依人頭出菜 NZD23/人，現金付款", navLink: "https://maps.app.goo.gl/PX4pWZNTfiLEUmWM9" }
         ]
       } 
     ] 
