@@ -52,7 +52,7 @@ export default defineConfig(({ mode }) => {
           start_url: "/",  // ← 改成絕對路徑
           display: "standalone",
           background_color: "#e4edfe",
-          theme_color: "#bcd2f9"
+          theme_color: "#E2E9F0"
         }
       })
     ],
