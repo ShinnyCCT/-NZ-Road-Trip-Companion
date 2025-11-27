@@ -1,7 +1,9 @@
 // postcss.config.js
+// 請確保使用 'export default'
 export default {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    // 依序指定 plugins
+    'tailwindcss': {},
+    'autoprefixer': {},
   },
 };
