@@ -16,7 +16,7 @@ root.render(
 if ('serviceWorker' in navigator) {
     // 註冊 /sw.js 檔案作為 Service Worker
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        //navigator.serviceWorker.register('/sw.js', { scope: '/' })
             .then(registration => {
                 console.log('Service Worker 註冊成功, 範圍:', registration.scope);
             })
