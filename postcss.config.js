@@ -1,9 +1,8 @@
 // postcss.config.js
-// 請確保使用 'export default'
-export default {
+// 請務必使用這個 CommonJS 格式來確保兼容性
+module.exports = {
   plugins: {
-    // 依序指定 plugins
     'tailwindcss': {},
     'autoprefixer': {},
   },
-};
+}
