@@ -424,7 +424,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:48", set: "21:20" }, 
     weather: { temp: "14°C", condition: "Rain", desc: "峽灣常雨" }, 
     activities: [ 
-      { time: "8:00", title: "Miles Better Pies", type: "food", duration: "1 hr", location: "Miles Better Pies", lat:-45.4166980, lng: 167.7124499, notes: "當地人氣鹹派店 \n 推薦口味:咖喱雞肉、薄荷羊肉、牛肉起司 \n 可以試試看鹿肉口味 ", navLink: "https://maps.app.goo.gl/XW8cqN43xumuaBSt8" } 
+      { time: "8:00", title: "Miles Better Pies", type: "food", duration: "1 hr", location: "Miles Better Pies", lat:-45.4166980, lng: 167.7124499, notes: "當地人氣鹹派店 \n 推薦口味:咖喱雞肉、薄荷羊肉、牛肉起司 \n 可以試試看鹿肉口味 ", navLink: "https://maps.app.goo.gl/XW8cqN43xumuaBSt8" },
       { 
           time: "09:00", 
           title: "移動：前往米佛峽灣", 
@@ -465,8 +465,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
           { title: "La Toscana Pizzeria", location: "La Toscana Pizzeria", lat: -45.4149613, lng: 167.7167907 , notes: "評價4.3⭐的義大利餐廳"},
           { title: "Radha's Indian Restaurant", location: "Radha's Indian Restaurant", lat: -45.4147673, lng: 167.7171833, notes: "看起來好ㄘ的印度餐廳", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" },
         ]
-      }  
-      { time: "19:40", title: "Te Anau Glowworm Caves", type: "activity", duration: "2.5 hr", location: "RealNZ Te Anau", lat: -45.4182, lng: 167.7111, notes: "已預約20:15 場次，搭船欣賞藍色螢火蟲洞", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" } 
+      },
+      { time: "19:40", title: "Te Anau Glowworm Caves", type: "activity", duration: "2.5 hr", location: "RealNZ Te Anau", lat: -45.4182, lng: 167.7111, notes: "已預約20:15 場次，搭船欣賞藍色螢火蟲洞", navLink: "https://maps.app.goo.gl/b7CNbo4id87cn5gcA" }, 
     ] 
   },
   { 
@@ -560,14 +560,14 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:55", set: "20:30" }, 
     weather: { temp: "22°C", condition: "Sunny", desc: "市區漫遊" }, 
     activities: [ 
-      { time: "09:00", title: "基督城市區自由活動", type: "visit", duration: "3 hr", location: "Christchurch Central City", lat: -43.5321, lng: 172.6362, notes: "享受假期尾聲，最後採買" 
+      { time: "09:00", title: "基督城市區自由活動", type: "visit", duration: "3 hr", location: "Christchurch Central City", lat: -43.5321, lng: 172.6362, notes: "享受假期尾聲，最後採買",
       subActivities: [
           { title: "基督城植物園", location: "Christchurch Botanic Gardens", lat: -43.5305, lng: 172.6169, notes: "占地大，有綠意植物&漂亮花朵" },
           { title: "河岸市場 Riverside Market", location: "Riverside Market", lat: -43.5337, lng: 172.6335, notes: "多國美食市集，蜂蜜MGO濃度高且便宜" },
           { title: "基督城大教堂 & 紙教堂", location: "Christchurch Transitional Cathedral", lat: -43.5309, lng: 172.6370, notes: "附近可看到可愛電車，適合拍照" },
            { title: "C1 Espresso (早午餐)", location: "C1 Espresso", lat: -43.5345, lng: 172.6385, notes: "4.3⭐(3314則) \n 郵局改建的特色建築，漢堡從天花板管線投遞" },
           { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" },
-          { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" }
+          { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" },
         ]}, 
       { time: "14:00", title: "前往機場 & 還車", type: "transport", duration: "1 hr", location: "Apex Car Rentals Christchurch Airport", lat: -43.4875, lng: 172.5373, notes: "搭乘 16:20 / 17:00 班機前往奧克蘭" }, 
       { time: "16:25", title: "前往奧克蘭", type: "flight", duration: "1.5 hr", location: "Auckland Airport", lat: -37.0082, lng: 174.7850, notes: "需備留時間還車" }, 
@@ -583,7 +583,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     weather: { temp: "--", condition: "Cloudy", desc: "返家" },
     isFlightDay: true,
     activities: [ 
-      { time: "11:15", title: "搭機回台灣", type: "transport", duration: "11 hr", location: "Taiwan Taoyuan International Airport", lat: 25.0797, lng: 121.2342, notes: "平安回家！", navLink: "https://maps.app.goo.gl/bNQN3tzGCyv9nQaB8" } 
+      { time: "10:45", title: "搭機回台灣", type: "transport", duration: "11 hr", location: "Taiwan Taoyuan International Airport", lat: 25.0797, lng: 121.2342, notes: "平安回家！", navLink: "https://maps.app.goo.gl/bNQN3tzGCyv9nQaB8" } 
     ] 
   }
 ];
