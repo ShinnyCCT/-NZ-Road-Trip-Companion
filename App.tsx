@@ -547,7 +547,22 @@ const App = () => {
                         )}
 
                         <div className="flex gap-2 mt-1 flex-wrap">
-                           {!currentDay.isFlightDay && item.type !== 'admin' && !item.subActivities && item.location && item.lat && (item.showNav !== false) && (
+                           {/* Special Button for Flights */ }
+                           {!currentDay.isFlightDay && item.type === 'flight' && (
+                                <button 
+                                    onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowFlightModal(true);
+                                    }}
+                                    className="flex items-center gap-1.5 text-xs md:text-sm font-bold text-white bg-[#8cd9ff] hover:bg-[#7ec3e6] px-3 py-1.5 rounded-full transition-colors shadow-md shadow-blue-100 active:scale-95"
+                                >
+                                    <Plane className="w-3 h-3" />
+                                    查看航班資訊
+                                </button>
+                            )}
+
+                            {/* Standard Navigation Button */ }
+                           {!currentDay.isFlightDay && item.type !== 'admin' && item.type !== 'flight' && !item.subActivities && item.location && item.lat && (item.showNav !== false) && !item.hideNav && (
                                 <button 
                                     onClick={(e) => {
                                     e.stopPropagation();
@@ -569,8 +584,8 @@ const App = () => {
                                 onClick={(e) => e.stopPropagation()}
                                 className="flex items-center gap-1.5 text-xs md:text-sm font-bold text-[#8a3e60] bg-[#d993b3]/20 border border-[#d993b3]/30 hover:bg-[#d993b3]/30 px-3 py-1.5 rounded-full transition-colors active:scale-95 shadow-sm"
                                 >
-                                <ExternalLink className="w-3 h-3" />
-                                {link.text}
+                                    <ExternalLink className="w-3 h-3" />
+                                    {link.text}
                                 </a>
                             ))}
                         </div>
@@ -635,7 +650,7 @@ const App = () => {
                                  <div className="flex items-center gap-3 mb-3">
                                      <div className="text-xl font-black text-slate-800">{flight.route.split('->')[0].trim().split(' ')[0]}</div>
                                      <div className="flex-1 h-px bg-slate-200 relative">
-                                        <Plane className={`w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 ${secIdx === 0 ? 'text-[#8cd9ff]' : 'text-[#f0d2af]'}`} />
+                                        <Plane className={`w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 ${secIdx === 0 ? 'text-[#8cd9ff]' : 'text-[#f0d2af]'}`} />
                                      </div>
                                      <div className="text-xl font-black text-slate-800">{flight.route.split('->')[1].trim().split(' ')[0]}</div>
                                  </div>
@@ -673,6 +688,8 @@ const App = () => {
               </button>
             </div>
             <div className="p-5 space-y-8">
+
+            {/* Emergency Contact Section */}
               <section>
                 <div className="grid gap-3">
                     {IMPORTANT_INFO.emergency.map((contact, idx) => (
@@ -686,6 +703,28 @@ const App = () => {
                 </div>
               </section>
 
+              {/* Traffic Rules Section */}
+               <section>
+                <div className="bg-[#8cd9ff]/10 p-4 rounded-2xl border border-[#8cd9ff]/30 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#8cd9ff]/20 flex items-center justify-center text-[#006bb5]">
+                      <Car className="w-4 h-4" />
+                    </div>
+                    <span className="font-bold text-slate-700 text-sm">紐西蘭交通規則複習</span>
+                  </div>
+                  <a 
+                    href="https://timtingtravel.com/nz-driving-tips/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-white text-[#006bb5] text-xs font-bold rounded-full border border-[#8cd9ff]/40 shadow-sm hover:bg-[#8cd9ff]/10 transition-colors flex items-center gap-1"
+                  >
+                    <BookOpen className="w-3 h-3" />
+                    查看
+                  </a>
+                </div>
+              </section>
+
+              {/* Daily Accommodation Section */}
               <section>
                 <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 pl-1">每日住宿</h4>
                 <div className="space-y-2">
@@ -707,6 +746,10 @@ const App = () => {
                   ))}
                 </div>
               </section>
+
+              
+              
+              
             </div>
           </div>
         </div>

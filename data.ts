@@ -383,7 +383,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     weather: { temp: "19°C", condition: "Sunny", desc: "舒適" }, 
     activities: [ 
       { time: "9:00", title: "Skyline Luge 溜溜車", type: "activity", duration: "2.5 hr", location: "Skyline Queenstown", lat: -45.0274, lng: 168.6526, notes: "纜車上山看風景，必玩溜溜車" }, 
-      { time: "13:00", title: "Bespoke Kitchen (早午餐)", type: "food", duration: "1 hr", location: "Bespoke Kitchen", lat: -45.0300, lng: 168.6645, notes: "4.6⭐(1617則) \n 推薦司康，每日有特殊口味" }, 
+      { time: "13:00", title: "Bespoke Kitchen (早午餐)", type: "food", duration: "1 hr", location: "Bespoke Kitchen", lat: -45.0301726, lng: 168.6578758, notes: "4.6⭐(1617則) \n 推薦司康，每日有特殊口味" }, 
       { time: "14:30", title: "皇后鎮市區 & ANITA GELATO (冰淇淋)", type: "visit", duration: "1.5 hr", location: "Anita Gelato", lat: -45.0317, lng: 168.6595, notes: "紐西蘭最好吃的義式冰淇淋", navLink: "https://maps.app.goo.gl/yK4BdVLtEHMmofdR6" }, 
       { time: "16:40", title: "TSS Earnslaw 蒸汽船 & BBQ", type: "activity", duration: "3.5 hr", location: "RealNZ", lat: -45.0332, lng: 168.6603, notes: "已預約17:00 場次，遊湖 + 農場 BBQ 晚餐", navLink: "https://maps.app.goo.gl/DuNGmjVe7LNwN3Ei8" }
     ] 
@@ -520,6 +520,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:40", set: "21:00" }, 
     weather: { temp: "18°C", condition: "Sunny", desc: "晴時多雲" }, 
     activities: [ 
+      { time: "8:30", title: "Beam Me Up Bagels", type: "food", duration: "", location: "Beam Me Up Bagels", lat: -45.8714912, lng: 170.5065644, notes: "4.9⭐(748則)  08:30–14:30  \n · Distric 9是煙燻鮭魚配上cream cheese，鮭魚新鮮的 \n · Men in Black是店員推薦，口味比較重，有點辣的雞肉貝果，很有記憶的口味\n · Wookiee是檸檬蛋黃醬➕cream cheese，酸酸甜甜的  \n · Lost in Spice吃了會有點想印度，香料味舒服、奶味剛好" , navLink: "https://maps.app.goo.gl/jvdbcvsu3u6NTojJ8"}, 
       { 
           time: "09:00", 
           title: "移動：返回基督城", 
