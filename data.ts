@@ -303,7 +303,13 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:45", set: "21:12" }, 
     weather: { temp: "19°C", condition: "Sunny", desc: "晴朗" }, 
     activities: [ 
-      { time: "09:00", title: "補漏行程 (若 D4 未完成)", type: "hike", duration: "2 hr", location: "Mount Cook Village", lat: -43.7353, lng: 170.0962, notes: "庫克山步道 or 塔斯曼湖步道" }, 
+      { time: "09:00", title: "彈性行程 (若 Day4有未完成行程)", type: "hike", duration: "2 hr", location: "Mount Cook Village", lat:  -43.6983064, lng:170.1630105, notes: "庫克山步道 or 塔斯曼湖步道" 
+        subActivities: [
+              { title: "Tasman Glacier Car Park", location: "Tasman Glacier Car Park", lat: -43.6983064, lng:170.1630105, notes: "眺望冰川末端", navLink: "https://maps.app.goo.gl/KS5edeJi74d3kq4W8" },
+              { title: "Hooker Valley track", location: "Hooker Valley track", lat:  -43.7180606, lng: 170.0936017, notes: "經典觀光健行路線", navLink: "https://maps.app.goo.gl/qzQfo284UqNsBFso8" },
+              { title: "Kea Point", location: "Kea Point", lat: -43.7105518, lng:170.0842842, notes: "跟Hooker同一個停車場，來回1至2小時", navLink: "https://maps.app.goo.gl/Gn62hsQXiiWiDc6N9" },
+          ]
+      }, 
       { 
           time: "13:00", 
           title: "移動：前往瓦納卡", 
@@ -357,6 +363,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
       { time: "13:30", title: "Pembroke Patisserie (早午餐)", type: "food", duration: "1 hr", location: "Pembroke Patisserie", lat: -44.6768, lng: 169.1615, notes: "推薦杏仁片可頌 & 原味可頌" },
       { time: "14:30", title: "移動：往皇后鎮 (經劍鎮)", type: "transport", duration: "1.5 hr", location: "Arrowtown", lat: -44.9425, lng: 168.8330, notes: "途經 Crown Range Summit (最高點觀景台)", navLink: "https://maps.app.goo.gl/p8Co1PEGMMZU84FK8" }, 
       { time: "15:30", title: "劍鎮 Arrowtown", type: "visit", duration: "1 hr", location: "Arrowtown Chinese Settlement", lat: -44.9389, lng: 168.8348, notes: "逛白金漢街與華人淘金村" }, 
+      { time: "17:00", title: "移動：往皇后鎮 (住宿)", type: "transport", duration: "1.5 hr", location: "Arrowtown", lat: -44.9425, lng: 168.8330, notes: "先前往住宿Check in，卸下行李", navLink: "https://maps.app.goo.gl/CDzKVff1Kj1xeDjn8" },
       { 
         time: "18:00", 
         title: "晚餐", 
@@ -412,7 +419,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
       }, 
       { time: "14:00", title: "Gibbston Valley 酒莊", type: "visit", duration: "1.5 hr", location: "Gibbston Valley Winery", lat: -45.0261, lng: 168.9458, notes: "已預約14:30場次，紅酒莊品酒行程" }, 
       { time: "17:00", title: "晚餐", type: "food", duration: "1 hr", location: "Queenstown", lat: -45.0311, lng: 168.6626, notes: "可再吃一次 Fergburger (如果還在皇后鎮)" },
-      { time: "18:30", title: "移動：前往蒂阿瑙 (Te Anau)", type: "transport", duration: "2 hr", location: "Te Anau", lat: -45.4144, lng: 167.7180, notes: "吃完晚餐後開車前往" }
+      { time: "18:30", title: "移動：前往蒂阿瑙 (Te Anau)", type: "transport", duration: "2 hr", location: "Te Anau", lat: -45.4144, lng: 167.7180, notes: "吃完晚餐後開車前往，直接導航到住宿", navLink: "https://maps.app.goo.gl/C1UWm6AD3dZhjkoS9" }
     ] 
   },
   { 
@@ -489,8 +496,8 @@ export const ITINERARY_DATA: DayItinerary[] = [
           lng: 170.5028, 
           notes: "路途經過：",
           subActivities: [
-              { title: "Nugget Point Lighthouse", location: "Nugget Point Lighthouse", lat: -46.4480, lng: 169.8170, notes: "經典明信片燈塔場景。" },
-              { title: "Tunnel Beach 隧道海灘", location: "Tunnel Beach Track", lat: -45.9169, lng: 170.4542, notes: "海蝕洞與人工隧道。" }
+              { title: "Nugget Point Lighthouse", location: "Nugget Point Lighthouse", lat: -46.4480767, lng: 169.8167943, notes: "經典明信片燈塔場景。" },
+              { title: "Tunnel Beach 隧道海灘", location: "Tunnel Beach Track", lat: -45.9209865, lng: 170.4589043, notes: "海蝕洞與人工隧道。" }
           ]
       }, 
       { time: "12:00", title: "Gore", type: "food", duration: "", location: "Gore", lat: -46.0994404, lng: 168.9460087, notes: "中午在這城市休息吃午餐，定位點附近餐廳可以點cheese rolls \n 可以試試看的餐廳:Cafe Ambience、Table Talk Cafe" , navLink: "https://maps.app.goo.gl/tWHrff81E5W1zwqV8"}, 
@@ -535,7 +542,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
           ]
       }, 
       { time: "12:00", title: "Oamaru奧馬魯市區", type: "visit", duration: "1 hr", location: "Oamaru Victorian Precinct", lat: -45.1031, lng: 170.9708, notes: "奧瑪魯維多利亞特區，白色石灰岩建築群" }, 
-      { time: "13:30", title: "Riverstone Kitchen 午餐", type: "food", duration: "1 hr", location: "Riverstone Kitchen", lat: -44.9541941, lng: 171.0846819, notes: "網路推薦，奧瑪魯北邊，使用在地食材" }, 
+      { time: "13:30", title: "Riverstone Kitchen 午餐", type: "food", duration: "1 hr", location: "Riverstone Kitchen", lat: -44.9541941, lng: 171.0846819, notes: "4.6⭐(1561則) \n 網路推薦，奧瑪魯北邊，使用在地食材" }, 
       { 
         time: "18:00", 
         title: "晚餐", 
@@ -570,9 +577,9 @@ export const ITINERARY_DATA: DayItinerary[] = [
           { title: "Hello Sunday (早午餐)", location: "Hello Sunday", lat: -43.5459603, lng: 172.6341439, notes: "4.6⭐(1689則) \n 早午餐好吃，像是牛夾肉，咖啡還好", navLink: "https://maps.app.goo.gl/EjRXCo1VkMNA1BUb9" },
           { title: "A'mano authentic pasta & cucina(餐廳)", location: "A'mano authentic pasta & cucina", lat: -43.5342944, lng: 172.6418111, notes: "4.8⭐(320則) \n 義大利人推薦，提拉米蘇好吃", navLink: "https://maps.app.goo.gl/uTcvi1p8BynUMQrx5" },
         ]}, 
-      { time: "14:00", title: "前往機場 & 還車", type: "transport", duration: "1 hr", location: "Apex Car Rentals Christchurch Airport", lat: -43.4875, lng: 172.5373, notes: "搭乘 16:20 / 17:00 班機前往奧克蘭" }, 
+      { time: "14:00", title: "前往機場 & 還車", type: "transport", duration: "1 hr", location: "Apex Car Rentals Christchurch Airport", lat: -43.4875, lng: 172.5373, notes: "搭乘 16:20 / 17:00 班機前往奧克蘭", navLink: "https://maps.app.goo.gl/NSs51JfzqwZC5DT99"  }, 
       { time: "16:25", title: "前往奧克蘭", type: "flight", duration: "1.5 hr", location: "Auckland Airport", lat: -37.0082, lng: 174.7850, notes: "需備留時間還車" }, 
-      { time: "19:00", title: "入住 Pullman Auckland Airport", type: "rest", duration: "", location: "Teewa Drive, Auckland Airport", lat: -37.0082, lng: 174.7850, notes: "機場旁，步行5分鐘即可抵達" } 
+      { time: "19:00", title: "入住 Pullman Auckland Airport", type: "rest", duration: "", location: "Teewa Drive, Auckland Airport", lat: -37.0082, lng: 174.7850, notes: "機場旁，步行5分鐘即可抵達", navLink: "https://maps.app.goo.gl/wYzSYcBj8wKjr22u9" } 
     ] 
   },
   { 
