@@ -491,18 +491,18 @@ const App = () => {
 
                   <div className="flex gap-4">
                     <div className="flex flex-col items-center pt-0.5 w-12 flex-shrink-0">
-                        <span className={`text-sm md:text-base font-bold font-mono leading-none ${item.isFlexible ? 'text-slate-500' : 'text-slate-700'}`}>{item.time}</span>
+                        <span className={`text-lg md:text-base font-bold font-mono leading-none ${item.isFlexible ? 'text-slate-500' : 'text-slate-700'}`}>{item.time}</span>
                         <div className="w-px h-full bg-slate-400/30 my-2 rounded-full"></div>
                     </div>
 
                     <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between mb-2 gap-2">
                             <div className="min-w-0">
-                                <h3 className={`font-bold text-sm md:text-base mb-1.5 ${item.isFlexible ? 'text-slate-600 italic' : 'text-slate-800'}`}>
+                                <h3 className={`font-bold text-base md:text-base mb-1.5 ${item.isFlexible ? 'text-slate-600 italic' : 'text-slate-800'}`}>
                                     {item.title}
                                 </h3>
                                 <div className="flex gap-2 items-center flex-wrap">
-                                    <span className={`text-xs md:text-sm px-2 py-0.5 rounded-lg border font-medium flex items-center gap-1.5 ${tag.color}`}>
+                                    <span className={`text-base md:text-sm px-2 py-0.5 rounded-lg border font-medium flex items-center gap-1.5 ${tag.color}`}>
                                         {getIconForType(item.type)}
                                         {tag.label}
                                     </span>
@@ -516,7 +516,7 @@ const App = () => {
                         </div>
                         
                         {item.notes && (
-                        <p className="text-sm text-slate-600 mb-3 leading-relaxed whitespace-pre-line">
+                        <p className="text-base text-slate-600 mb-3 leading-relaxed whitespace-pre-line">
                             {item.notes}
                         </p>
                         )}
@@ -526,8 +526,8 @@ const App = () => {
                                 {item.subActivities.map((sub, subIdx) => (
                                     <div key={subIdx} className="flex items-start justify-between p-3 rounded-xl bg-white/40 border border-white/50">
                                         <div className="min-w-0 mr-3">
-                                            <div className="text-sm font-bold text-slate-700 mb-0.5">{sub.title}</div>
-                                            {sub.notes && <div className="text-xs text-slate-500 leading-tight">{sub.notes}</div>}
+                                            <div className="text-base font-bold text-slate-700 mb-0.5">{sub.title}</div>
+                                            {sub.notes && <div className="text-base text-slate-500 leading-tight">{sub.notes}</div>}
                                         </div>
                                         {sub.location && (
                                             <button 
