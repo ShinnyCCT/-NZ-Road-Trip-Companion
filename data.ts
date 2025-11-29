@@ -303,13 +303,13 @@ export const ITINERARY_DATA: DayItinerary[] = [
     sun: { rise: "05:45", set: "21:12" }, 
     weather: { temp: "19°C", condition: "Sunny", desc: "晴朗" }, 
     activities: [ 
-      { time: "09:00", title: "彈性行程 (若 Day4有未完成行程)", type: "hike", duration: "2 hr", location: "Mount Cook Village", lat:  -43.6983064, lng:170.1630105, notes: "庫克山步道 or 塔斯曼湖步道" 
+      { time: "09:00", title: "彈性行程 (若 Day4有未完成行程)", type: "hike", duration: "2 hr", location: "Mount Cook Village", lat:  -43.6983064, lng:170.1630105, notes: "庫克山步道 or 塔斯曼湖步道" , 
         subActivities: [
               { title: "Tasman Glacier Car Park", location: "Tasman Glacier Car Park", lat: -43.6983064, lng:170.1630105, notes: "眺望冰川末端", navLink: "https://maps.app.goo.gl/KS5edeJi74d3kq4W8" },
               { title: "Hooker Valley track", location: "Hooker Valley track", lat:  -43.7180606, lng: 170.0936017, notes: "經典觀光健行路線", navLink: "https://maps.app.goo.gl/qzQfo284UqNsBFso8" },
               { title: "Kea Point", location: "Kea Point", lat: -43.7105518, lng:170.0842842, notes: "跟Hooker同一個停車場，來回1至2小時", navLink: "https://maps.app.goo.gl/Gn62hsQXiiWiDc6N9" },
           ]
-      }, 
+      }
       { 
           time: "13:00", 
           title: "移動：前往瓦納卡", 
