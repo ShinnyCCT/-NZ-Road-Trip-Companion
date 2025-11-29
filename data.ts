@@ -309,7 +309,7 @@ export const ITINERARY_DATA: DayItinerary[] = [
               { title: "Hooker Valley track", location: "Hooker Valley track", lat:  -43.7180606, lng: 170.0936017, notes: "經典觀光健行路線", navLink: "https://maps.app.goo.gl/qzQfo284UqNsBFso8" },
               { title: "Kea Point", location: "Kea Point", lat: -43.7105518, lng:170.0842842, notes: "跟Hooker同一個停車場，來回1至2小時", navLink: "https://maps.app.goo.gl/Gn62hsQXiiWiDc6N9" },
           ]
-      }
+      },
       { 
           time: "13:00", 
           title: "移動：前往瓦納卡", 
