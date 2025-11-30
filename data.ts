@@ -7,8 +7,8 @@ export const FLIGHT_GROUPS = [
       {
         type: "去程",
         flights: [
-          { date: "11/30 (日)", airline: "國泰 CX443", route: "TPE 台北 -> HKG 香港", time: "15:50 - 17:55", aircraft: "A330-300", duration: "2h 05m" },
-          { date: "11/30 (日)", airline: "國泰 CX123", route: "HKG 香港 -> CHC 基督城", time: "21:05 - 13:20 (+1)", aircraft: "A350-900", duration: "11h 15m" }
+          { date: "11/30 (日)", airline: "國泰 CX443", route: "TPE 台北 -> HKG 香港", time: "18:02 - 19:54(Dealay)", aircraft: "A330-300", duration: "2h 05m" },
+          { date: "11/30 (日)", airline: "國泰 CX119", route: "HKG 香港 -> CHC 基督城", time: "20:40 - 12:50 (+1)", aircraft: "A350-900", duration: "11h 10m" }
         ]
       },
       {
