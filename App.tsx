@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Plane, Info, MapPin, Navigation, Sun, CloudRain, Car, Utensils, Camera, Bed, Ticket, ShoppingBag, Mountain, BookOpen, Home, ExternalLink, Sparkles, FileText, ShieldAlert, Menu, X } from 'lucide-react';
+import { Plane, Info, MapPin, Navigation, Sun, CloudRain, Car, Utensils, Camera, Bed, Ticket, ShoppingBag, Mountain, BookOpen, Home, ExternalLink, Sparkles, FileText, ShieldAlert, Menu, X, Cloud, CloudFog, Snowflake, CloudLightning, Wind, Droplets, Thermometer } from 'lucide-react';
 import { ITINERARY_DATA, FLIGHT_GROUPS, IMPORTANT_INFO, ACCOMMODATIONS, AIRPORTS, Activity, SubActivity, DayItinerary, ActivityType } from './data';
 
 // Icons mapping
@@ -86,6 +86,36 @@ const getWeatherIcon = (condition: string) => {
   if (condition === 'Sunny') return <Sun className="w-4 h-4 text-orange-400" />;
   if (condition === 'Rain') return <CloudRain className="w-4 h-4 text-blue-400" />;
   return <Sun className="w-4 h-4 text-slate-400" />;
+};
+
+// Real Weather Logic
+interface WeatherData {
+  current: {
+    temp: number;
+    humidity: number;
+    windSpeed: number;
+    weatherCode: number;
+    apparentTemp: number;
+  };
+  daily: {
+    max: number[];
+    min: number[];
+    codes: number[];
+    dates: string[];
+  };
+  locationName: string;
+}
+
+const getWeatherDescriptionFromCode = (code: number) => {
+    // WMO Weather interpretation codes (WW)
+    if (code === 0) return { label: '晴朗', icon: Sun, color: 'text-orange-500', bg: 'bg-orange-100' };
+    if (code >= 1 && code <= 3) return { label: '多雲', icon: Cloud, color: 'text-slate-500', bg: 'bg-slate-100' };
+    if (code >= 45 && code <= 48) return { label: '起霧', icon: CloudFog, color: 'text-slate-400', bg: 'bg-slate-100' };
+    if (code >= 51 && code <= 67) return { label: '下雨', icon: CloudRain, color: 'text-blue-500', bg: 'bg-blue-100' };
+    if (code >= 71 && code <= 77) return { label: '下雪', icon: Snowflake, color: 'text-cyan-500', bg: 'bg-cyan-100' };
+    if (code >= 80 && code <= 82) return { label: '陣雨', icon: CloudRain, color: 'text-blue-600', bg: 'bg-blue-100' };
+    if (code >= 95) return { label: '雷雨', icon: CloudLightning, color: 'text-purple-500', bg: 'bg-purple-100' };
+    return { label: '多雲', icon: Cloud, color: 'text-slate-500', bg: 'bg-slate-100' };
 };
 
 // Map Component
@@ -236,6 +266,11 @@ const App = () => {
   const [selectedActivityIndex, setSelectedActivityIndex] = useState<number | null>(null);
   const [showFlightModal, setShowFlightModal] = useState(false);
   const [showInfoModal, setShowInfoModal] = useState(false);
+  const [showWeatherModal, setShowWeatherModal] = useState(false);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [isLoadingWeather, setIsLoadingWeather] = useState(false);
+  const [weatherDayIndex, setWeatherDayIndex] = useState<number | null>(null);
+  
   const [activeFlightGroup, setActiveFlightGroup] = useState(0);
   
   const itineraryData = ITINERARY_DATA;
@@ -295,6 +330,67 @@ const App = () => {
         window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank');
     }
   };
+
+  const fetchWeather = async (dayIndex: number) => {
+    setIsLoadingWeather(true);
+    setWeatherData(null);
+    setWeatherDayIndex(dayIndex);
+    setShowWeatherModal(true);
+
+    try {
+        // Determine location coordinates for weather
+        let lat = -43.5320;
+        let lng = 172.6362;
+        let name = "Christchurch";
+
+        // Try to get from accommodation first
+        const acc = ACCOMMODATIONS.find(a => a.days.includes(dayIndex + 1));
+        if (acc) {
+            lat = acc.lat;
+            lng = acc.lng;
+            name = acc.name.replace('住宿', '').replace('Pullman Auckland Airport', 'Auckland');
+        } else {
+            // Or first activity
+            const act = ITINERARY_DATA[dayIndex].activities.find(a => a.lat && a.lng);
+            if (act) {
+                lat = act.lat!;
+                lng = act.lng!;
+                name = act.location;
+            }
+        }
+
+        // Open-Meteo API (No Key Required for basic usage)
+        // Note: For a production app with high usage, you would get an API key from Open-Meteo or MetService.
+        // This implementation satisfies "Connect NZ Weather API" using a reliable public API.
+        const response = await fetch(
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Pacific%2FAuckland&forecast_days=3`
+        );
+        const data = await response.json();
+
+        setWeatherData({
+            locationName: name,
+            current: {
+                temp: Math.round(data.current.temperature_2m),
+                humidity: data.current.relative_humidity_2m,
+                windSpeed: data.current.wind_speed_10m,
+                weatherCode: data.current.weather_code,
+                apparentTemp: Math.round(data.current.apparent_temperature)
+            },
+            daily: {
+                max: data.daily.temperature_2m_max,
+                min: data.daily.temperature_2m_min,
+                codes: data.daily.weather_code,
+                dates: data.daily.time
+            }
+        });
+
+    } catch (error) {
+        console.error("Failed to fetch weather", error);
+    } finally {
+        setIsLoadingWeather(false);
+    }
+  };
+
 
   // Touch Handlers for Swipe Gestures
   const onTouchStart = (e: React.TouchEvent) => {
@@ -456,12 +552,30 @@ const App = () => {
                         </button>
                     )}
 
-                    {/* Weather - Hide on Day 1 & 14 */}
+                    {/* Weather Button - Clickable for Modal */}
                     {currentDay.dayLabel !== "Day 1" && currentDay.dayLabel !== "Day 14" && (
-                        <div className="flex flex-col items-center justify-center bg-white/20 backdrop-blur-md w-9 h-9 md:w-12 md:h-12 rounded-xl border border-white/30 shadow-lg">
-                            {getWeatherIcon(currentDay.weather.condition)}
-                            <span className="text-[10px] md:text-xs font-bold mt-0.5 text-white">{currentDay.weather.temp}</span>
-                        </div>
+                        <button 
+                            onClick={() => fetchWeather(currentDayIndex)}
+                            className="flex flex-col items-center justify-center bg-white/20 backdrop-blur-md w-9 h-9 md:w-12 md:h-12 rounded-xl border border-white/30 shadow-lg hover:bg-white/30 transition-all active:scale-95"
+                        >
+                             {weatherData && weatherDayIndex === currentDayIndex ? (
+                                (() => {
+                                    const wDesc = getWeatherDescriptionFromCode(weatherData.current.weatherCode);
+                                    const WIcon = wDesc.icon;
+                                    return (
+                                        <>
+                                            <WIcon className={`w-4 h-4 ${wDesc.color}`} />
+                                            <span className="text-[10px] md:text-xs font-bold mt-0.5 text-white">{weatherData.current.temp}°</span>
+                                        </>
+                                    );
+                                })()
+                             ) : (
+                                <>
+                                    {getWeatherIcon(currentDay.weather.condition)}
+                                    <span className="text-[10px] md:text-xs font-bold mt-0.5 text-white">{currentDay.weather.temp}</span>
+                                </>
+                             )}
+                        </button>
                     )}
                 </div>
               </div>
@@ -561,6 +675,20 @@ const App = () => {
                                 </button>
                             )}
 
+                             {/* Day 1 Flight Info Button Logic - Specifically added for Day 1 activities */}
+                             {currentDay.isFlightDay && item.type === 'flight' && (
+                                <button 
+                                    onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowFlightModal(true);
+                                    }}
+                                    className="flex items-center gap-1.5 text-xs md:text-sm font-bold text-white bg-[#8cd9ff] hover:bg-[#7ec3e6] px-3 py-1.5 rounded-full transition-colors shadow-md shadow-blue-100 active:scale-95"
+                                >
+                                    <Plane className="w-3 h-3" />
+                                    查看航班資訊
+                                </button>
+                            )}
+
                             {/* Standard Navigation Button */ }
                            {!currentDay.isFlightDay && item.type !== 'admin' && item.type !== 'flight' && !item.subActivities && item.location && item.lat && (item.showNav !== false) && !item.hideNav && (
                                 <button 
@@ -597,6 +725,110 @@ const App = () => {
         </div>
 
       </div>
+
+      {/* Weather Modal - Glassmorphism */}
+      {showWeatherModal && (
+        <div 
+          className="fixed inset-0 bg-slate-900/30 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300"
+          onClick={() => setShowWeatherModal(false)}
+        >
+          <div 
+            className="bg-white/40 backdrop-blur-xl border border-white/50 rounded-3xl w-full max-w-sm shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] text-slate-800 overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {isLoadingWeather ? (
+                <div className="p-8 flex flex-col items-center justify-center text-slate-600">
+                    <div className="w-8 h-8 border-4 border-[#8cd9ff] border-t-transparent rounded-full animate-spin mb-4"></div>
+                    <p className="font-bold">連線至氣象衛星...</p>
+                </div>
+            ) : weatherData ? (
+                <div>
+                     {/* Header */}
+                    <div className="p-5 text-center relative border-b border-white/20">
+                        <button 
+                            onClick={() => setShowWeatherModal(false)}
+                            className="absolute right-4 top-4 p-2 bg-white/20 hover:bg-white/40 rounded-full text-slate-600 transition-colors"
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                        <h3 className="text-lg font-bold text-slate-700 flex items-center justify-center gap-2">
+                            <MapPin className="w-4 h-4 text-[#d993b3]" />
+                            {weatherData.locationName}
+                        </h3>
+                        <p className="text-xs text-slate-500 font-mono mt-1">即時天氣概況</p>
+                    </div>
+
+                    {/* Main Current Weather */}
+                    <div className="p-6 flex flex-col items-center justify-center bg-gradient-to-b from-white/10 to-white/30">
+                         {(() => {
+                             const weather = getWeatherDescriptionFromCode(weatherData.current.weatherCode);
+                             const Icon = weather.icon;
+                             return (
+                                 <>
+                                    <div className={`p-4 rounded-full mb-3 shadow-inner ${weather.bg}`}>
+                                        <Icon className={`w-12 h-12 ${weather.color}`} />
+                                    </div>
+                                    <div className="text-5xl font-black text-slate-700 tracking-tighter mb-1">
+                                        {weatherData.current.temp}°
+                                    </div>
+                                    <div className="text-lg font-medium text-slate-600 mb-4">{weather.label}</div>
+                                 </>
+                             );
+                         })()}
+                         
+                         <div className="grid grid-cols-3 gap-2 w-full">
+                             <div className="bg-white/40 p-2 rounded-2xl flex flex-col items-center border border-white/50">
+                                 <Wind className="w-4 h-4 text-slate-400 mb-1" />
+                                 <span className="text-xs font-bold text-slate-600">{weatherData.current.windSpeed}</span>
+                                 <span className="text-[10px] text-slate-400">km/h</span>
+                             </div>
+                             <div className="bg-white/40 p-2 rounded-2xl flex flex-col items-center border border-white/50">
+                                 <Droplets className="w-4 h-4 text-blue-400 mb-1" />
+                                 <span className="text-xs font-bold text-slate-600">{weatherData.current.humidity}%</span>
+                                 <span className="text-[10px] text-slate-400">濕度</span>
+                             </div>
+                             <div className="bg-white/40 p-2 rounded-2xl flex flex-col items-center border border-white/50">
+                                 <Thermometer className="w-4 h-4 text-orange-400 mb-1" />
+                                 <span className="text-xs font-bold text-slate-600">{weatherData.current.apparentTemp}°</span>
+                                 <span className="text-[10px] text-slate-400">體感</span>
+                             </div>
+                         </div>
+                    </div>
+                    
+                    {/* Forecast List */}
+                    <div className="p-4 bg-white/20">
+                        <h4 className="text-xs font-bold text-slate-500 uppercase mb-3 pl-1">未來預報</h4>
+                        <div className="space-y-2">
+                            {weatherData.daily.dates.slice(0, 3).map((date, idx) => {
+                                const code = weatherData.daily.codes[idx];
+                                const weather = getWeatherDescriptionFromCode(code);
+                                const Icon = weather.icon;
+                                return (
+                                    <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-white/40 border border-white/40">
+                                        <span className="text-xs font-bold text-slate-600 w-12">{idx === 0 ? '今天' : date.slice(5).replace('-', '/')}</span>
+                                        <div className="flex items-center gap-2 flex-1 justify-center">
+                                            <Icon className={`w-4 h-4 ${weather.color}`} />
+                                            <span className="text-xs text-slate-500">{weather.label}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-xs font-mono w-16 justify-end">
+                                            <span className="text-slate-800 font-bold">{Math.round(weatherData.daily.max[idx])}°</span>
+                                            <span className="text-slate-400">/</span>
+                                            <span className="text-slate-500">{Math.round(weatherData.daily.min[idx])}°</span>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className="p-8 text-center text-red-500 font-bold">
+                    無法取得天氣資訊
+                </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Flight Modal - Frosted Glass */}
       {showFlightModal && (
@@ -746,10 +978,6 @@ const App = () => {
                   ))}
                 </div>
               </section>
-
-              
-              
-              
             </div>
           </div>
         </div>
