@@ -54,6 +54,16 @@
       .leaflet-control-container .leaflet-bottom {
         z-index: 1000 !important;
       }
+
+      /* Custom Wiggle Animation for Panda */
+      @keyframes wiggle {
+        0%, 100% { transform: rotate(-5deg) scale(1); }
+        50% { transform: rotate(5deg) scale(1.05); }
+      }
+      .animate-wiggle {
+        animation: wiggle 1s ease-in-out infinite;
+        transform-origin: bottom center;
+      }
     </style>
   <script type="importmap">
 {

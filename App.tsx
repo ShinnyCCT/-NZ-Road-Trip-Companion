@@ -261,6 +261,16 @@ const MapComponent = ({ currentDay, selectedActivityIndex }: { currentDay: DayIt
   return <div ref={mapContainerRef} className="w-full h-full min-h-[100px] bg-[#e3f4fa]/50 z-0" />;
 };
 
+// ** HIDDEN EASTER EGG IMAGES **
+// 用戶上傳的熊貓圖片 (Placeholder，請替換為真實連結)
+const HIDDEN_IMAGES = [
+  "/Easter egg_1.png", // 使用 Logo 作為預設圖 (綠帽熊貓)
+  "/Easter egg_2.png", // 使用 Day 1 封面 (騎車熊貓)
+  "/Easter egg_3.png", // 使用 Day 2 封面 (照鏡子熊貓)
+  "/Easter egg_4.png", // 使用 Day 3 封面 (海豹)
+  "/Easter egg_5.png", // 使用 Day 4 封面 (吃吐司熊貓)
+];
+
 const App = () => {
   const [currentDayIndex, setCurrentDayIndex] = useState(0);
   const [selectedActivityIndex, setSelectedActivityIndex] = useState<number | null>(null);
@@ -271,6 +281,11 @@ const App = () => {
   const [isLoadingWeather, setIsLoadingWeather] = useState(false);
   const [weatherDayIndex, setWeatherDayIndex] = useState<number | null>(null);
   
+  // Easter Egg State
+  const [logoClickCount, setLogoClickCount] = useState(0);
+  const [easterEggImage, setEasterEggImage] = useState<string | null>(null);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
   const [activeFlightGroup, setActiveFlightGroup] = useState(0);
   
   const itineraryData = ITINERARY_DATA;
@@ -391,6 +406,30 @@ const App = () => {
     }
   };
 
+  // Logic for Easter Egg Trigger
+  const handleLogoClick = () => {
+      const nextCount = logoClickCount + 1;
+      setLogoClickCount(nextCount);
+
+      if (nextCount === 5) {
+          // Trigger Easter Egg
+          const randomImage = HIDDEN_IMAGES[Math.floor(Math.random() * HIDDEN_IMAGES.length)];
+          setEasterEggImage(randomImage);
+          setIsFadingOut(false);
+          setLogoClickCount(0); // Reset count
+
+          // Start fade out slightly before removal
+          setTimeout(() => {
+              setIsFadingOut(true);
+          }, 3500);
+
+          // Remove after 4 seconds
+          setTimeout(() => {
+              setEasterEggImage(null);
+              setIsFadingOut(false);
+          }, 4000);
+      }
+  };
 
   // Touch Handlers for Swipe Gestures
   const onTouchStart = (e: React.TouchEvent) => {
@@ -442,11 +481,12 @@ const App = () => {
       <header className="bg-[#e3f4fa]/80 backdrop-blur-md border-b border-white/50 py-1 px-2 flex-shrink-0 z-20 shadow-sm">
         <div className="flex justify-between items-center mb-1 pt-1">
           <div className="pl-2">
-            {/* Image Title */}
+            {/* Image Title with Easter Egg Trigger */}
             <img 
               src="https://lh3.googleusercontent.com/d/15ZFAWwDWNrzBIOeUoDIpddpt9NLnzLdJ" 
               alt="沈家爆玩紐西蘭" 
-              className="h-7 w-auto object-contain"
+              className="h-7 w-auto object-contain cursor-pointer active:scale-95 transition-transform"
+              onClick={handleLogoClick}
             />
           </div>
           <div className="flex gap-2 pr-1">
@@ -725,6 +765,19 @@ const App = () => {
         </div>
 
       </div>
+
+       {/* Easter Egg Overlay */}
+       {easterEggImage && (
+        <div className={`fixed inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-md transition-opacity duration-500 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="relative animate-wiggle">
+            <img 
+              src={easterEggImage} 
+              alt="Funny Panda" 
+              className="max-w-[80vw] max-h-[70vh] object-contain drop-shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Weather Modal - Glassmorphism */}
       {showWeatherModal && (
