@@ -269,6 +269,12 @@ const HIDDEN_IMAGES = [
   "/Easter egg_3.png", // 使用 Day 2 封面 (照鏡子熊貓)
   "/Easter egg_4.png", // 使用 Day 3 封面 (海豹)
   "/Easter egg_5.png", // 使用 Day 4 封面 (吃吐司熊貓)
+  "/Easter egg_6.png", 
+  "/Easter egg_7.png", 
+  "/Easter egg_8.png", 
+  "/Easter egg_9.png", 
+  "/Easter egg_10.png", 
+  "/kiwi_512.png", 
 ];
 
 const App = () => {
@@ -427,7 +433,7 @@ const App = () => {
           setTimeout(() => {
               setEasterEggImage(null);
               setIsFadingOut(false);
-          }, 4000);
+          }, 2600);
       }
   };
 
