@@ -274,7 +274,12 @@ const HIDDEN_IMAGES = [
   "/Easter egg_8.png", 
   "/Easter egg_9.png", 
   "/Easter egg_10.png", 
-  "/kiwi_512.png", 
+  "/Easter egg_11.png",
+  "/Easter egg_12.png",
+  "/Easter egg_13.png",
+  "/Easter egg_14.png",
+  "/Easter egg_15.png",
+  "/Easter egg_16.png",
 ];
 
 const App = () => {
