@@ -283,6 +283,7 @@ const HIDDEN_IMAGES = [
 ];
 
 const App = () => {
+  // Start at Day 0 (Day 1) by default
   const [currentDayIndex, setCurrentDayIndex] = useState(0);
   const [selectedActivityIndex, setSelectedActivityIndex] = useState<number | null>(null);
   const [showFlightModal, setShowFlightModal] = useState(false);
@@ -308,23 +309,7 @@ const App = () => {
   const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
   const [touchEnd, setTouchEnd] = useState<{x: number, y: number} | null>(null);
 
-  useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    const tripStartDate = itineraryData[0].date;
-
-    // If today is before the trip starts, show Day 1.
-    // Otherwise, try to find today's date.
-    if (today < tripStartDate) {
-        setCurrentDayIndex(0);
-    } else {
-        const foundIndex = itineraryData.findIndex(item => item.date === today);
-        if (foundIndex !== -1) {
-            setCurrentDayIndex(foundIndex);
-        }
-    }
-  }, []);
-
-  useEffect(() => {
+useEffect(() => {
     if (scrollRef.current) {
       const selectedBtn = scrollRef.current.children[currentDayIndex] as HTMLElement;
       if (selectedBtn) {
